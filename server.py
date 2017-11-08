@@ -5,3 +5,4 @@ from os import *
 while True:
   time.sleep(5)
   system('sudo python show.py')
+  time.sleep(55)
