@@ -50,6 +50,8 @@ def send_data(data):
         time.sleep(0.002)
         buf &= 0xFB               # Make EN = 0
         BUS.write_byte(LCD_ADDR ,buf)
+	
+def blacklight_lcd():
 	BUS.write_byte(LCD_ADDR,~0x00) # blacklight on
 def init_lcd():
         try:
@@ -89,12 +91,14 @@ def print_lcd(x, y, str):
 
 if __name__ == '__main__':
         init_lcd()
-        localIP=get_host_ip()
+        
+	blacklight_lcd()
 	while True:
+		localIP=get_host_ip()
         	print_lcd(0, 0,localIP )
 		file = open("/sys/class/thermal/thermal_zone0/temp")  
 		temp = float(file.read()) / 1000 
 		file.close()
-		wd="CPU temp : %.1f" %temp 
+		wd="CPU temp : %.1f ℃" %temp 
         	print_lcd(0, 1, wd)
 		time.sleep(3)
