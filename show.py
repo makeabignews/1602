@@ -91,14 +91,11 @@ def print_lcd(x, y, str):
 
 if __name__ == '__main__':
         init_lcd()
-        
 	blacklight_lcd()
-	while True:
-		localIP=get_host_ip()
-        	print_lcd(0, 0,localIP )
-		file = open("/sys/class/thermal/thermal_zone0/temp")  
-		temp = float(file.read()) / 1000 
-		file.close()
-		wd="CPU temp : %.1f ℃" %temp 
-        	print_lcd(0, 1, wd)
-		time.sleep(3)
+	localIP=get_host_ip()
+        print_lcd(0, 0,localIP )
+	file = open("/sys/class/thermal/thermal_zone0/temp")  
+	temp = float(file.read()) / 1000 
+	file.close()
+	wd="CPU temp : %.1f ℃" %temp 
+        print_lcd(0, 1, wd)
