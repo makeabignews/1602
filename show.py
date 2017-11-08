@@ -91,7 +91,6 @@ def print_lcd(x, y, str):
 
 if __name__ == '__main__':
         init_lcd()
-	blacklight_lcd()
 	localIP=get_host_ip()
         print_lcd(0, 0,localIP )
 	file = open("/sys/class/thermal/thermal_zone0/temp")  
@@ -99,3 +98,4 @@ if __name__ == '__main__':
 	file.close()
 	wd="CPU temp : %.1f ℃" %temp 
         print_lcd(0, 1, wd)
+	blacklight_lcd()
