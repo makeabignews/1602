@@ -2,6 +2,6 @@
 # -*- coding:UTF-8 -*-  
 from time import ctime 
 from os import * 
-while true:
+while True:
   time.sleep(5)
-  system('sudo ./show.py)
+  system('sudo ./show.py')
