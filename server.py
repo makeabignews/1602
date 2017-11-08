@@ -4,5 +4,5 @@ import time
 import os,sys
 while True:
   time.sleep(5)
-  os.system('sudo python %s.py' %(os.path.dirname(os.path.realpath(__file__)) ))
+  os.system('sudo python %s/show.py' %(os.path.dirname(os.path.realpath(__file__)) ))
   time.sleep(55)
