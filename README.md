@@ -14,8 +14,12 @@ sudo nano /etc/rc.local
 ```
 add:
 ``
-su root -c "/usr/bin/python /home/pi/1602/show.py"
+su root -c "/usr/bin/python /home/pi/1602/server.py"
 ``
+
+ ```
+ sudo chmod +x server.py
+ ```
 ``
 reboot
 ``
