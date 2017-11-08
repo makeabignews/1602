@@ -4,4 +4,4 @@ import time
 from os import * 
 while True:
   time.sleep(5)
-  system('sudo ./show.py')
+  system('sudo python show.py')
